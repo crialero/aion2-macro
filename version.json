@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "url": "https://github.com/crialero/aion2-macro/releases/download/v0.1.0/AION2Macro_0.1.0.zip",
-  "sha256": "7a2d7d18b637d82016de9761287d901deda38d6291a61539edf41cd7d686562b",
-  "notes": "Primera version publica: deteccion automatica del juego + actualizaciones automaticas."
+  "version": "0.1.1",
+  "url": "https://github.com/crialero/aion2-macro/releases/download/v0.1.1/AION2Macro_0.1.1.zip",
+  "sha256": "01345899824d897ba869c013638b4138201db3612798201e549de1c3061fd22e",
+  "notes": "Se elimino el campo 'Proceso objetivo'; el cliente queda fijado a AION2.exe."
 }
