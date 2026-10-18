@@ -2,7 +2,7 @@
 
 Utilidad de **comodidad** para **AION2** (no es AFK, no automatiza el juego).
 
-Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un enemigo, el programa ejecuta automáticamente la **secuencia de teclas/clicks** que tú elijas (por ejemplo `R` y `Q`), **según el modo de cada una**: mantenerla pulsada, repetirla cada X ms o un solo pulso por click. Así el *"click → target → skill"* funciona sin tener que pulsar las skills a mano.
+Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un enemigo, el programa ejecuta automáticamente la **secuencia de teclas/clicks** que tú elijas (por ejemplo `R` y `Q`), **según el modo de cada una**: mantenerla pulsada, repetirla cada X ms, un solo pulso por click, o mantenerla pulsada con re-pulsaciones periódicas. Así el *"click → target → skill"* funciona sin tener que pulsar las skills a mano.
 
 > **Filosofía / ToS:** pensado para usarse **mientras juegas activamente**. La política de NCSoft **tolera** el *skill-weaving* manual asistido; lo que **banea** es AFK, scripts, automatización total y RMT. **Nunca lo dejes en AFK.**
 
@@ -16,6 +16,7 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
   - **Mantenido** — deja la tecla pulsada mientras sostienes el click.
   - **Repetir** — pulsa/suelta cada X ms.
   - **Una vez** — un solo pulso por click.
+  - **Mantenido repetido** — la mantiene pulsada y le hace un **micro-corte** cada X ms para **re-dispararla** (útil para skills que se ponen en cola). Duración del corte configurable con **Corte (ms)** (1–200 ms).
 - **Delay** configurable hacia la **siguiente** tecla de la secuencia.
 - **Clics como teclas**: además de teclas, puedes asignar **CLICK IZQ.** / **CLICK DER.** (mismo driver HID).
 - **Salida por FakerInput** (driver HID firmado): el input sale como dispositivo real (`flags = 0x0`), por eso el anticheat de AION2 lo acepta (a diferencia de AHK / `SendInput`).
