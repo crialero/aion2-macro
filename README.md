@@ -2,27 +2,29 @@
 
 Utilidad de **comodidad** para **AION2** (no es AFK, no automatiza el juego).
 
-Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un enemigo, el programa pulsa automáticamente **2 teclas** que tú elijas (por ejemplo `R` y `Q`) y las mantiene mientras el botón siga pulsado. Así el *"click → target → skill"* funciona sin tener que pulsar las skills a mano.
+Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un enemigo, el programa pulsa automáticamente la **secuencia de teclas/clicks** que tú elijas (por ejemplo `R` y `Q`) y las mantiene mientras el botón siga pulsado. Así el *"click → target → skill"* funciona sin tener que pulsar las skills a mano.
 
 > **Filosofía / ToS:** pensado para usarse **mientras juegas activamente**. La política de NCSoft **tolera** el *skill-weaving* manual asistido; lo que **banea** es AFK, scripts, automatización total y RMT. **Nunca lo dejes en AFK.**
 
-![Captura del programa](screenshot.png?v=0.3.0)
+![Captura del programa](screenshot-0.3.0.png)
 
 ---
 
 ## Características
 
-- **CLICK sostenido → teclas** (configurables), con umbral de tiempo y separación entre teclas.
-- **Clics como teclas**: además de teclas, puedes asignar **CLICK IZQ.** / **CLICK DER.** en la secuencia (mismo driver HID).
-- **Modos por tecla**: *Mantenido* / *Repetir* / *Una vez*, con **delay** configurable hacia la siguiente tecla.
-- **Tooltips y guardado automático**: los botones muestran su función al pasar el mouse y los cambios se guardan solos.
-- **Idioma en vivo**: **Español / English** (cambia sin reiniciar).
+- **CLICK sostenido → secuencia**: al mantener el botón del mouse salen las teclas/clicks que configures, **cada una con su modo**:
+  - **Mantenido** — deja la tecla pulsada mientras sostienes el click.
+  - **Repetir** — pulsa/suelta cada X ms.
+  - **Una vez** — un solo pulso por click.
+- **Delay** configurable hacia la **siguiente** tecla de la secuencia.
+- **Clics como teclas**: además de teclas, puedes asignar **CLICK IZQ.** / **CLICK DER.** (mismo driver HID).
 - **Salida por FakerInput** (driver HID firmado): el input sale como dispositivo real (`flags = 0x0`), por eso el anticheat de AION2 lo acepta (a diferencia de AHK / `SendInput`).
 - **Solo en combate**: opción para que las teclas salgan **solo cuando el cursor está oculto** (combate), y no en menús o chat.
 - **Perfiles** ilimitados (uno por clase) + **compartir perfiles** (Exportar / Cargar `profiles.json`).
+- **Guardado automático**: los cambios se guardan solos en `profiles.json`.
+- **Tooltips** e **idioma en vivo** (**Español / English**), sin reiniciar.
 - **Detección automática de clase** (experimental, **off** por defecto): lee tu clase de los **paquetes de AION2** (solo lectura, sin inyectar) y cambia solo al perfil de esa clase.
-- **Actualizaciones automáticas**: al abrir, comprueba si hay versión nueva y se actualiza **sola**, conservando tus perfiles.
-- Tema claro/oscuro, tecla de pánico (**END** por defecto).
+- Tema claro/oscuro y tecla de pánico (**END** por defecto).
 
 ---
 
@@ -47,9 +49,9 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
 ## Uso
 
 1. Elige un **perfil** (o crea/renombra).
-2. Ajusta: botón del mouse, teclas (1ª y 2ª), umbral de click, separación, etc.
-3. Pulsa **Guardar** y luego **▶ Iniciar**.
-4. Juega: al sostener el botón del mouse, salen las teclas.
+2. Ajusta: botón del mouse, **secuencia de teclas/clicks** (con su modo y delay), umbral de click, etc.
+3. Pulsa **Guardar** (o espera: se guarda solo) y luego **▶ Iniciar**.
+4. Juega: al sostener el botón del mouse, salen las teclas/clicks según el modo de cada una.
 5. **Pánico: END** (activa/desactiva el macro).
 
 > **El host debe ejecutarse como Administrador** para poder leer el estado del click cuando AION2 tiene el foco (el juego corre en integridad alta y UIPI lo bloquea si no). El `.exe` ya trae el manifiesto `--uac-admin`.
@@ -74,14 +76,6 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
 
 ---
 
-## Actualizaciones automáticas
-
-- Al **abrir**, el macro consulta un manifiesto y, si hay versión nueva, la **descarga**, verifica su **SHA-256**, la **instala sola** y se reinicia.
-- **Tus perfiles se conservan** (el actualizador excluye `profiles.json`).
-- Puedes activar/desactivar con la casilla **"Buscar actualizaciones al iniciar"** y forzarlo con **"Buscar actualización ahora"**.
-
----
-
 ## Problemas frecuentes
 
 - **El macro no hace nada al hacer click:** asegúrate de ejecutarlo **como Administrador** (si no, no lee el click con AION2 en foco).
@@ -91,46 +85,11 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
 
 ---
 
-## Cómo funciona (técnico, resumen)
-
-- **GUI:** CustomTkinter. **Motor:** hilo a 8 ms que lee el click (`GetAsyncKeyState`), la ventana en foco (`GetForegroundWindow`) y la visibilidad del cursor (`GetCursorInfo`).
-- **Salida:** FakerInput (HID real, `VID 0xFE0F / PID 0x00FF`).
-- **Detección:** Npcap **pasivo** + API de Windows (`Toolhelp32` + `GetExtendedTcpTable`) para localizar el proceso/puertos del juego; parsea el protocolo binario de AION2 y lee el *self record* (opcode `33 36`) para obtener nombre/servidor/clase.
-- **Empaquetado:** PyInstaller (`--onedir`, sin cifrado ni UPX, para minimizar falsos positivos de AV).
-
----
-
-## Estructura del repositorio
-
-```
-aion2-macro/
-├─ version.json        <- manifiesto para las actualizaciones automáticas
-├─ screenshot.png      <- captura del programa
-└─ README.md
-```
-
-Las versiones (ZIP) se publican en la pestaña **Releases**.
-
----
-
 ## Descargas
 
 - **Última versión:** https://github.com/crialero/aion2-macro/releases/latest
-- Historial de versiones: pestaña **Releases**.
+- **Todas las versiones:** https://github.com/crialero/aion2-macro/releases
 
 ---
 
-## Versionado
-
-`0.MENOR.PARCHE`
-- Cambios **grandes** → sube el segundo número (`0.1` → `0.2`).
-- Cambios **pequeños** → sube el parche (`0.1.0`, `0.1.1`, `0.1.2`…).
-
----
-
-## Créditos
-
-Desarrollado por **Crialero**. Herramienta de comodidad para uso personal mientras se juega activamente.
-
-- FakerInput: https://github.com/Ryochan7/FakerInput
-- Npcap: https://npcap.com/
+Desarrollado por **Crialero**.
