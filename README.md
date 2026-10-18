@@ -92,4 +92,25 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
 
 ---
 
+## Licencia
+
+Este proyecto se distribuye bajo la **PolyForm Noncommercial License 1.0.0** (ver [`LICENSE`](LICENSE)).
+
+- Puedes **usarlo, modificarlo y compartirlo** para fines **no comerciales** (uso personal, hobby, estudio, investigación, etc.).
+- **No se permite el uso comercial** ni revenderlo.
+
+La licencia **no ofrece garantía** de ningún tipo. Es una herramienta de comodidad: úsala bajo tu responsabilidad y respetando las normas (ToS) del juego.
+
+---
+
+## Créditos
+
+- **FakerInput** (driver HID para enviar teclas/clicks) — MIT — https://github.com/Ryochan7/FakerInput
+- **Npcap** (captura de red, opcional para la detección de clase) — licencia propia — https://npcap.com/
+- **Font Awesome Free** (iconos) — CC BY 4.0 (iconos) / SIL OFL 1.1 (fuente) / MIT (código) — https://fontawesome.com
+- **CustomTkinter** — MIT · **python-lz4** — BSD-2-Clause.
+- Gracias a **A2Tools-DPS-Meter** por documentar el protocolo de AION2 (solo se usó información de formato; no se reutilizó su código).
+
+---
+
 Desarrollado por **Crialero**.
