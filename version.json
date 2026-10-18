@@ -1,6 +1,6 @@
 {
-  "version": "0.3.0",
-  "url": "https://github.com/crialero/aion2-macro/releases/download/v0.3.0/AION2Macro_0.3.0.zip",
-  "sha256": "f635d2137e0ee323679906795c46489db326ff867cd7d8412c8ff6ac3774af15",
-  "notes": "Clicks como teclas (izq/der), tooltips, guardado automatico y correcciones."
+  "version": "0.3.1",
+  "url": "https://github.com/crialero/aion2-macro/releases/download/v0.3.1/AION2Macro_0.3.1.zip",
+  "sha256": "83df138bbc6627591347aa2ba181f485711a7fe038a74b087a20fe556a8a4821",
+  "notes": "Nuevo modo 'Mantenido repetido' + campo 'Corte (ms)' (1-200 ms)."
 }
