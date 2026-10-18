@@ -6,13 +6,17 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
 
 > **Filosofía / ToS:** pensado para usarse **mientras juegas activamente**. La política de NCSoft **tolera** el *skill-weaving* manual asistido; lo que **banea** es AFK, scripts, automatización total y RMT. **Nunca lo dejes en AFK.**
 
-![Captura del programa](screenshot.png)
+![Captura del programa](screenshot.png?v=0.3.0)
 
 ---
 
 ## Características
 
-- **CLICK sostenido → 2 teclas** (configurables), con umbral de tiempo y separación entre teclas.
+- **CLICK sostenido → teclas** (configurables), con umbral de tiempo y separación entre teclas.
+- **Clics como teclas**: además de teclas, puedes asignar **CLICK IZQ.** / **CLICK DER.** en la secuencia (mismo driver HID).
+- **Modos por tecla**: *Mantenido* / *Repetir* / *Una vez*, con **delay** configurable hacia la siguiente tecla.
+- **Tooltips y guardado automático**: los botones muestran su función al pasar el mouse y los cambios se guardan solos.
+- **Idioma en vivo**: **Español / English** (cambia sin reiniciar).
 - **Salida por FakerInput** (driver HID firmado): el input sale como dispositivo real (`flags = 0x0`), por eso el anticheat de AION2 lo acepta (a diferencia de AHK / `SendInput`).
 - **Solo en combate**: opción para que las teclas salgan **solo cuando el cursor está oculto** (combate), y no en menús o chat.
 - **Perfiles** ilimitados (uno por clase) + **compartir perfiles** (Exportar / Cargar `profiles.json`).
