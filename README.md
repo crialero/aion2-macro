@@ -2,7 +2,7 @@
 
 Utilidad de **comodidad** para **AION2** (no es AFK, no automatiza el juego).
 
-Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un enemigo, el programa pulsa automáticamente la **secuencia de teclas/clicks** que tú elijas (por ejemplo `R` y `Q`) y las mantiene mientras el botón siga pulsado. Así el *"click → target → skill"* funciona sin tener que pulsar las skills a mano.
+Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un enemigo, el programa ejecuta automáticamente la **secuencia de teclas/clicks** que tú elijas (por ejemplo `R` y `Q`), **según el modo de cada una**: mantenerla pulsada, repetirla cada X ms o un solo pulso por click. Así el *"click → target → skill"* funciona sin tener que pulsar las skills a mano.
 
 > **Filosofía / ToS:** pensado para usarse **mientras juegas activamente**. La política de NCSoft **tolera** el *skill-weaving* manual asistido; lo que **banea** es AFK, scripts, automatización total y RMT. **Nunca lo dejes en AFK.**
 
