@@ -94,12 +94,10 @@ Mientras **sostienes un botón del mouse** (izquierdo o derecho) apuntando a un 
 
 ## Licencia
 
-Este proyecto se distribuye bajo la **PolyForm Noncommercial License 1.0.0** (ver [`LICENSE`](LICENSE)).
+Este proyecto se distribuye bajo la **Licencia MIT** (ver [`LICENSE`](LICENSE)).
 
-- Puedes **usarlo, modificarlo y compartirlo** para fines **no comerciales** (uso personal, hobby, estudio, investigación, etc.).
-- **No se permite el uso comercial** ni revenderlo.
-
-La licencia **no ofrece garantía** de ningún tipo. Es una herramienta de comodidad: úsala bajo tu responsabilidad y respetando las normas (ToS) del juego.
+- Puedes **usarlo, modificarlo, compartirlo e incluso venderlo** libremente, siempre que conserves el aviso de copyright.
+- Se ofrece **"tal cual", sin garantía** de ningún tipo (*"bajo tu propio riesgo"*). Es una herramienta de comodidad y su uso depende de cada persona: úsala bajo tu responsabilidad y respetando las normas (ToS) del juego.
 
 ---
 
